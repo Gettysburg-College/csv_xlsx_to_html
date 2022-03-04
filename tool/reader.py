@@ -4,7 +4,6 @@ import numpy as np
 from .table import Table
 from typing import List, Dict
 
-# %%
 class Reader:
   DICT_KEYS = ('First-Name', 'Last-Name', 'Middle-Name', 'Exp-Grad')
 
@@ -51,19 +50,12 @@ class Reader:
         # add St
         curr_rows.append(my_dict)
 
-
-
-
-# %%
   def __read_file(self):
-    data = pd.read_csv(self.csv_path)
+    data = pd.read_csv(self.csv_path, encoding='latin1')
     data = data.dropna(axis=0, how='all')
     return data
 
-
-# %%
   def getData(self):
     table_list = self.list_tables
     for table in table_list:
       pass
-# %%
