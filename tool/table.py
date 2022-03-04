@@ -1,7 +1,7 @@
 from typing import List, Dict
 
 class Table:
-  def __init__(self, table_name: str, table_id: str, rows: List[Dict[str, str]]) -> None:
+  def __init__(self, table_name: str="", table_id: str="", rows: List[Dict[str, str]]=None) -> None:
     self.table_name: str = table_name
     self.table_id: str = table_id
     self.rows: List[Dict[str, str]] = rows
