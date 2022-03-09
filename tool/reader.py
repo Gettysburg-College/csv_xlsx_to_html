@@ -63,7 +63,11 @@ class Reader:
     return data
 
   def getData(self):
-    table_list = self.list_tables
-    for table in table_list:
-      print(f'{table.table_name} - id={table.table_name}')
+    for table in self.list_tables:
+      print(f'{table.table_name} - id= {table.table_name}')
+      for student in table.rows:
+        print(f'last: {student[Reader.DICT_KEYS[1]]} \t fist: {student[Reader.DICT_KEYS[0]]}\
+         \t mid: {student[Reader.DICT_KEYS[2]]} \t grad_year {student[Reader.DICT_KEYS[3]]}')
       print()
+  
+    return self.list_tables.copy()
