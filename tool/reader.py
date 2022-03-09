@@ -5,7 +5,7 @@ from .table import Table
 from typing import List, Dict
 
 class Reader:
-  DICT_KEYS = ('Last-Name', 'First-Name', 'Middle-Name', 'Exp-Grad')
+  DICT_KEYS = ('First-Name', 'Last-Name', 'Middle-Name', 'Exp-Grad')
 
   def __init__(self, csv_path: str) -> None:
     self.csv_path = csv_path
