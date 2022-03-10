@@ -20,7 +20,7 @@ class Reader:
     for id, row in df.iterrows():
       # new table for Seniors, Juniors, etc.
       # print(pd.isna(Reader.DICT_KEYS[1]))
-      if row[Reader.DICT_KEYS[0]] is not None and pd.isna(row[Reader.DICT_KEYS[0]]) and pd.isna(row[Reader.DICT_KEYS[2]]):
+      if pd.isna(row[Reader.DICT_KEYS[0]]) and pd.isna(row[Reader.DICT_KEYS[2]]) and pd.isna(row[Reader.DICT_KEYS[3]]):
       # and pd.isnull(Reader.DICT_KEYS[1]) and pd.isnull(Reader.DICT_KEYS[2]):
 
         # if that year does not in list
@@ -47,8 +47,8 @@ class Reader:
 
         # add student's info into Dictionary
         my_dict = dict()
-        my_dict[Reader.DICT_KEYS[0]] = row[0]
-        my_dict[Reader.DICT_KEYS[1]] = row[1]
+        my_dict[Reader.DICT_KEYS[1]] = row[0]
+        my_dict[Reader.DICT_KEYS[0]] = row[1]
         my_dict[Reader.DICT_KEYS[2]] = row[2]
         my_dict[Reader.DICT_KEYS[3]] = row[3]
 
