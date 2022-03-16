@@ -22,7 +22,7 @@ f"""
 	</h2>
 	<ul class="page-toc">
 """
-    for table in self.reader.tables:
+    for table in self.reader.list_tables:
       html_string += self.__generate_one_toc(table)
 
     html_string += \
@@ -31,7 +31,7 @@ f"""
 </div>
 
 """
-    for table in self.reader.tables:
+    for table in self.reader.list_tables:
       html_string += table.html_string()
     
     return html_string

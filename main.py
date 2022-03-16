@@ -1,8 +1,19 @@
-from re import S
+import sys
+
+from tool.page import Page
 from tool.reader import Reader
 from tool.table import Table
 
-csv_path = "./data/Deans Commendation List.csv"
-r = Reader(csv_path)
+if __name__ == "__main__":
 
-r.getData()
+  # csv_path = "./data/Deans Commendation List.csv"
+  # output_path = "./output/test.html"
+
+  csv_path = sys.argv[1]
+  output_path = sys.argv[2]
+
+  r = Reader(csv_path)
+
+  p = Page(r)
+  with open(output_path, "w") as f:
+    f.write(p.generate())

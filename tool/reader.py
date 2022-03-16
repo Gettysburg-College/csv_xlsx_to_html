@@ -7,7 +7,8 @@ from typing import List, Dict
 class Reader:
   DICT_KEYS = ('First-Name', 'Last-Name', 'Middle-Name', 'Exp-Grad')
 
-  def __init__(self, csv_path: str) -> None:
+  def __init__(self, csv_path: str, verbose=False) -> None:
+    self.verbose = verbose
     self.csv_path = csv_path
     # self.__read_file()
     self.list_tables: List[Table] = []
@@ -32,8 +33,8 @@ class Reader:
           id = str(row[0]).lower()
           rows = []
           curr_table = Table(table_id=id, table_name=name, rows=rows)
-
-          print(f'{name} : {id}')
+          if self.verbose:
+            print(f'{name} : {id}')
 
           # add new Table into list_tables
           self.list_tables.append(curr_table)
@@ -54,7 +55,8 @@ class Reader:
 
         # add St
         curr_rows.append(my_dict)
-        print(f'{id}:\t{my_dict}')
+        if self.verbose:
+          print(f'{id}:\t{my_dict}')
 
   def __read_file(self):
     data = pd.read_csv(self.csv_path, encoding='latin1')
@@ -63,11 +65,12 @@ class Reader:
     return data
 
   def getData(self):
-    for table in self.list_tables:
-      print(f'{table.table_name} - id= {table.table_name}')
-      for student in table.rows:
-        print(f'last: {student[Reader.DICT_KEYS[1]]} \t fist: {student[Reader.DICT_KEYS[0]]}\
-         \t mid: {student[Reader.DICT_KEYS[2]]} \t grad_year {student[Reader.DICT_KEYS[3]]}')
-      print()
+    if self.verbose:
+      for table in self.list_tables:
+        print(f'{table.table_name} - id= {table.table_name}')
+        for student in table.rows:
+          print(f'last: {student[Reader.DICT_KEYS[1]]} \t fist: {student[Reader.DICT_KEYS[0]]}\
+          \t mid: {student[Reader.DICT_KEYS[2]]} \t grad_year {student[Reader.DICT_KEYS[3]]}')
+        print()
   
     return self.list_tables.copy()

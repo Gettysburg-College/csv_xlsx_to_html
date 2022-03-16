@@ -10,8 +10,8 @@ class Table:
     return \
 f"""
 <tr>
-  <th data-label="Last Name" scope="row">{student["Last Name"]}</th>
-  <td data-label="First Name">{student["First Name"]}</td>
+  <th data-label="Last Name" scope="row">{student["Last-Name"]}</th>
+  <td data-label="First Name">{student["First-Name"]}</td>
 </tr>
 """
 
@@ -24,8 +24,8 @@ f"""
 <table class="dcf-table dcf-table-responsive dcf-table-bordered dcf-table-striped dcf-w-100%">
   <thead>
 		<tr>
-			<th data-label="Last Name" scope="col">Last Name</th>
-			<th data-label="First Name" scope="col">First Name</th>
+			<th data-label="Last Name" scope="col">Last-Name</th>
+			<th data-label="First Name" scope="col">First-Name</th>
 		</tr>
 	</thead>
   <tbody>
