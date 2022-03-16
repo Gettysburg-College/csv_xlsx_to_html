@@ -7,6 +7,13 @@
   
   - change DICT_KEY to data's column name or vice versa
 
+
+# Running
+
+```
+python main.py "./data/Deans Commendation List.csv" "./output/test.html"
+```
+
 ### Request to J. Johnson
 
 Table format: 
