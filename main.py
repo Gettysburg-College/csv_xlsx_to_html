@@ -12,7 +12,7 @@ if __name__ == "__main__":
   csv_path = sys.argv[1]
   output_path = sys.argv[2]
 
-  r = Reader(csv_path)
+  r = Reader(csv_path, verbose=True)
 
   p = Page(r)
   with open(output_path, "w") as f:

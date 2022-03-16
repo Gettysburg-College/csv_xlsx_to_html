@@ -5,7 +5,7 @@ from .table import Table
 from typing import List, Dict
 
 class Reader:
-  DICT_KEYS = ('First-Name', 'Last-Name', 'Middle-Name', 'Exp-Grad')
+  DICT_KEYS = ('Last-Name', 'First-Name', 'Middle-Name', 'Exp-Grad')
 
   def __init__(self, csv_path: str, verbose=False) -> None:
     self.verbose = verbose
@@ -48,18 +48,18 @@ class Reader:
 
         # add student's info into Dictionary
         my_dict = dict()
-        my_dict[Reader.DICT_KEYS[1]] = row[0]
-        my_dict[Reader.DICT_KEYS[0]] = row[1]
+        my_dict[Reader.DICT_KEYS[0]] = row[0]
+        my_dict[Reader.DICT_KEYS[1]] = row[1]
         my_dict[Reader.DICT_KEYS[2]] = row[2]
         my_dict[Reader.DICT_KEYS[3]] = row[3]
 
         # add St
         curr_rows.append(my_dict)
         if self.verbose:
-          print(f'{id}:\t{my_dict}')
+          print(f'{id}:\n\t{my_dict}\n')
 
   def __read_file(self):
-    data = pd.read_csv(self.csv_path, encoding='latin1')
+    data = pd.read_csv(self.csv_path, encoding='latin1', header=0, names=Reader.DICT_KEYS)
     data = data.dropna(axis=0, how='all')
     print('finish read data')
     return data
