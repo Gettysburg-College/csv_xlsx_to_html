@@ -10,7 +10,6 @@ class Reader:
   def __init__(self, csv_path: str, verbose=False) -> None:
     self.verbose = verbose
     self.csv_path = csv_path
-    # self.__read_file()
     self.list_tables: List[Table] = []
 
     table_name_list = set()
@@ -19,10 +18,10 @@ class Reader:
 
     df = self.__read_file()
     for id, row in df.iterrows():
-      # new table for Seniors, Juniors, etc.
+
+      # new table for each class year
       print(pd.isna(Reader.DICT_KEYS[1]))
       if pd.isna(row[Reader.DICT_KEYS[1]]) and pd.isna(row[Reader.DICT_KEYS[2]]) and pd.isna(row[Reader.DICT_KEYS[3]]):
-      # and pd.isnull(Reader.DICT_KEYS[1]) and pd.isnull(Reader.DICT_KEYS[2]):
 
         # if that year does not in list
         if row[0] not in table_name_list:
@@ -44,8 +43,6 @@ class Reader:
 
       # rows contain student information
       else:
-        # print('new student')
-
         # add student's info into Dictionary
         my_dict = dict()
         my_dict[Reader.DICT_KEYS[0]] = row[0]
@@ -53,7 +50,7 @@ class Reader:
         my_dict[Reader.DICT_KEYS[2]] = row[2]
         my_dict[Reader.DICT_KEYS[3]] = row[3]
 
-        # add St
+        # add Student
         curr_rows.append(my_dict)
         if self.verbose:
           print(f'{id}:\n\t{my_dict}\n')
