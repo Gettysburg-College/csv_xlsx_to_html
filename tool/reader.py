@@ -20,8 +20,8 @@ class Reader:
     df = self.__read_file()
     for id, row in df.iterrows():
       # new table for Seniors, Juniors, etc.
-      # print(pd.isna(Reader.DICT_KEYS[1]))
-      if pd.isna(row[Reader.DICT_KEYS[0]]) and pd.isna(row[Reader.DICT_KEYS[2]]) and pd.isna(row[Reader.DICT_KEYS[3]]):
+      print(pd.isna(Reader.DICT_KEYS[1]))
+      if pd.isna(row[Reader.DICT_KEYS[1]]) and pd.isna(row[Reader.DICT_KEYS[2]]) and pd.isna(row[Reader.DICT_KEYS[3]]):
       # and pd.isnull(Reader.DICT_KEYS[1]) and pd.isnull(Reader.DICT_KEYS[2]):
 
         # if that year does not in list
