@@ -59,7 +59,15 @@ class Reader:
           print(f'{id}:\n\t{my_dict}\n')
 
   def __read_file(self):
-    data = pd.read_csv(self.csv_path, encoding='latin1', header=0, names=Reader.DICT_KEYS)
+    file_format = self.csv_path.split('.')[-1]
+    if (file_format == 'csv'):
+      data = pd.read_csv(self.csv_path, encoding='latin1', header=0, names=Reader.DICT_KEYS)
+    elif (file_format == 'xlsx'):
+      data = pd.read_excel(self.csv_path, header=0, names=Reader.DICT_KEYS)
+    else:
+      print('File must be csv or xlsx')
+      return
+    
     data = data.dropna(axis=0, how='all')
     print('finish read data')
     return data
