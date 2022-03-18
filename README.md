@@ -29,7 +29,10 @@ Get student information (rows) from files and convert into html. The program wil
   * Output folder:
     * `output_file.html`: the output file of this program.
   * Tool folder:
-    * `table.py`:contains object-oriented class `Table`. Each `Table` object is a class year cohort including `table_id`, `table_name`, and `rows`.
+    * `table.py`:contains object-oriented class `Table`. Each `Table` object is a class year cohort including:
+     * `table_id`:
+     * `table_name`:
+     * `rows`:
     * `reader.py`: contains object-oriented class `Reader` needed to pass parameter: data file path as `str`. This class reads data from `.csv` or `.xlsx` file and store data in each class each as a `row` in `Table` object
     * `page.py`: contains object-oriented class `Page` needed to pass parameter: a `Reader` object. This class contains skeleton structure for HTML file.
   * main.py
