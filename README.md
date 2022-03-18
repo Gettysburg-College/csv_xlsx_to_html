@@ -42,29 +42,28 @@ Get student information (rows) from files and convert into html. The program wil
 
 ## Files format
 
-Table format: 
+File location:
+- All files must be put in `data` folder.
+
+File format: 
 - Column name (1st row): Last-Name, First-Name, Middle-Name, Exp-Grad.
 - Students are listed in order from Seniors, Juniors, Sophomores, and First Years.
-* Note: check files `\data\Deans Commendation List.csv` or `\data\Deans Commendation List.xlsx` for examples.
+* Note: check files `Deans Commendation List.csv` or `Deans Commendation List.xlsx` in folder `data` for examples.
 
 |  Last-Name  |  First-Name  |  Middle-Name  |   Exp-Grad  |
 |  ---------  |  ----------  |  -----------  |   --------  |
 | Seniors     |              |               |             |
 | stud's last | stud's first | stud's middle | Exp Grad yr |
-|             |              |               |             |
+|     ...     |     ...      |      ...      |     ...     |
 | Juniors     |              |               |             |
 | stud's last | stud's first | stud's middle | Exp Grad yr |
-|             |              |               |             |
+|     ...     |     ...      |      ...      |     ...     |
 | Sophomores  |              |               |             |
 | stud's last | stud's first | stud's middle | Exp Grad yr |
-|             |              |               |             |
+|     ...     |     ...      |      ...      |     ...     |
 | First Years |              |               |             |
 | stud's last | stud's first | stud's middle | Exp Grad yr |
-|             |              |               |             |
-
-
-File location:
-- All files should be put in `data` folder.
+|     ...     |     ...      |      ...      |     ...     |
 
 ---
 
@@ -85,12 +84,12 @@ File location:
     
     # For example:
     
-    python3 main.py "./data/Deans Commendation List.csv" "./output/commendation.html"
+    python3 main.py "Deans Commendation List.csv" "commendation.html"
     ```
     The html file can be found in `output` folder.
 
   * Note: You can change `pip3` to `pip` and `python3` to `python` if possible.
-  * Note: command `./data/Deans Commendation List.csv` can be changed based on your file name.
+  * Note: command `Deans Commendation List.csv` can be changed based on your file name.
 
 
 

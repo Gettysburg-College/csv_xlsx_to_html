@@ -9,8 +9,8 @@ if __name__ == "__main__":
   # csv_path = "./data/Deans Commendation List.csv"
   # output_path = "./output/test.html"
 
-  csv_path = sys.argv[1]
-  output_path = sys.argv[2]
+  csv_path = './data/' + sys.argv[1]
+  output_path = './output/' + sys.argv[2]
 
   r = Reader(csv_path, verbose=True)
 
